@@ -1,4 +1,4 @@
-﻿using Newtonsoft.Json;
+﻿using System.Text.Json.Serialization;
 
 namespace ITfoxtec.Identity.Messages
 {
@@ -10,55 +10,55 @@ namespace ITfoxtec.Identity.Messages
         /// <summary>
         /// REQUIRED. OAuth 2.0 Grant Type value that determines the method used by the client to request authorization and the types supported by the authorization server.
         /// </summary>
-        [JsonProperty(PropertyName = "grant_type")]
+        [JsonPropertyName("grant_type")]
         public string GrantType { get; set; }
 
         /// <summary>
         /// REQUIRED in Authorization Code Grant. The authorization code received from the authorization server.
         /// </summary>
-        [JsonProperty(PropertyName = "code")]
+        [JsonPropertyName("code")]
         public string Code { get; set; }
 
         /// <summary>
         /// REQUIRED in Refresh Token Grant. The refresh token issued to the client.
         /// </summary>
-        [JsonProperty(PropertyName = "refresh_token")]
+        [JsonPropertyName("refresh_token")]
         public string RefreshToken { get; set; }
 
         /// <summary>
         /// REQUIRED in Extension Grants. The assertion can e.g. contain a Access Token or SAML 2.0 token.
         /// </summary>
-        [JsonProperty(PropertyName = "assertion")]
+        [JsonPropertyName("assertion")]
         public string Assertion { get; set; }
         
         /// <summary>
         ///  REQUIRED, if the "redirect_uri" parameter was included in the authorization request.
         /// </summary>
-        [JsonProperty(PropertyName = "redirect_uri")]
+        [JsonPropertyName("redirect_uri")]
         public string RedirectUri { get; set; }
 
         /// <summary>
         /// REQUIRED, if the client is not authenticating with the authorization server as described in OAuth 2.0 Section 3.2.1.
         /// </summary>
-        [JsonProperty(PropertyName = "client_id")]
+        [JsonPropertyName("client_id")]
         public string ClientId { get; set; }
 
         /// <summary>
         /// OPTIONAL. The scope of the access request as described by OAuth 2.0 Section 3.3.
         /// </summary>
-        [JsonProperty(PropertyName = "scope")]
+        [JsonPropertyName("scope")]
         public string Scope { get; set; }
 
         /// <summary>
         /// REQUIRED in Resource Owner Password Credentials Grant. The resource owner username.
         /// </summary>
-        [JsonProperty(PropertyName = "username")]
+        [JsonPropertyName("username")]
         public string Username { get; set; }
 
         /// <summary>
         /// REQUIRED in Resource Owner Password Credentials Grant. The resource owner password.
         /// </summary>
-        [JsonProperty(PropertyName = "password")]
+        [JsonPropertyName("password")]
         public string Password { get; set; }
     }
 }

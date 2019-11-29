@@ -5,6 +5,7 @@ using System.Security.Claims;
 using System.Linq;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Cryptography.X509Certificates;
+using Microsoft.IdentityModel.Logging;
 
 namespace ITfoxtec.Identity.Tokens
 {
@@ -13,6 +14,11 @@ namespace ITfoxtec.Identity.Tokens
     /// </summary>
     public class JwtHandler
     {
+        static JwtHandler()
+        {
+            IdentityModelEventSource.ShowPII = true;
+        }
+
         /// <summary>
         /// Create and sign JWT token.
         /// </summary>

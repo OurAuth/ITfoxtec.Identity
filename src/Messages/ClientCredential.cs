@@ -1,4 +1,4 @@
-﻿using Newtonsoft.Json;
+﻿using System.Text.Json.Serialization;
 
 namespace ITfoxtec.Identity.Messages
 {
@@ -10,7 +10,7 @@ namespace ITfoxtec.Identity.Messages
         /// <summary>
         /// REQUIRED. The client secret. The client MAY omit the parameter if the client secret is an empty string.
         /// </summary>
-        [JsonProperty(PropertyName = "client_secret")]
+        [JsonPropertyName("client_secret")]
         public string ClientSecret { get; set; }
     }
 }

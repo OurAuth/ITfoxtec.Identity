@@ -1,4 +1,4 @@
-﻿using Newtonsoft.Json;
+﻿using System.Text.Json.Serialization;
 
 namespace ITfoxtec.Identity.Messages
 {
@@ -7,7 +7,7 @@ namespace ITfoxtec.Identity.Messages
         /// <summary>
         /// A cryptographically random string that is used to correlate the authorization request to the token request.
         /// </summary>
-        [JsonProperty(PropertyName = "code_verifier")]
+        [JsonPropertyName("code_verifier")]
         public string CodeVerifier { get; set; }
     }
 }
